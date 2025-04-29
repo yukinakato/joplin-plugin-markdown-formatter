@@ -1,12 +1,7 @@
 {
   "name": "joplin-plugin-markdown-formatter",
   "version": "1.0.0",
-  "scripts": {
-    "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
-    "prepare": "npm run dist",
-    "updateVersion": "webpack --env joplin-plugin-config=updateVersion",
-    "update": "npm install -g generator-joplin && yo joplin --node-package-manager npm --update --force"
-  },
+  "private": true,
   "license": "MIT",
   "keywords": [
     "joplin-plugin"
@@ -14,10 +9,22 @@
   "files": [
     "publish"
   ],
+  "scripts": {
+    "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
+    "prepare": "npm run dist",
+    "updateVersion": "webpack --env joplin-plugin-config=updateVersion",
+    "update": "npm install -g generator-joplin && yo joplin --node-package-manager npm --update --force"
+  },
+  "dependencies": {
+    "prettier": "^3.5.3"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.12.0",
+    "@codemirror/view": "^6.36.6",
     "@types/node": "^18.7.13",
     "chalk": "^4.1.0",
     "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^9.25.1",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
     "tar": "^6.1.11",
